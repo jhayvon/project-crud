@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}home{% endblock %}
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<form action="/create" method="post">
+    <label for="passenger_name">passenger name:</label>
+    <input type="text" name="passenger_name" id="passenger_name">
+
+    <label for="contact">contact:</label>
+    <input type="text" name="contact" id="contact">
+
+    <label for="fight_date">fight date:</label>
+    <input type="date" name="fight_date" id="fight_date">
+
+    <label for="gate">gate:</label>
+    <input type="text" name="gate" id="gate">
+
+    <label for="boarding_time">boarding time:</label>
+    <input type="time" name="boarding_time" id="boarding_time">
+
+    <label for="departure">departure:</label>
+    <input type="text" name="departure" id="departure">
+
+    <label for="arrival">arrival:</label>
+    <input type="text" name="arrival" id="arrival">
+
+    <label for="seat">seat:</label>
+    <input type="text" name="seat" id="seat">
+
+    <label for="fare_class">fare class:</label>
+    <input type="text" name="fare_class" id="fare_class">
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}
